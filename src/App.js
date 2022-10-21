@@ -1,10 +1,12 @@
 import './App.css';
 import UseState from './hook/basic/useState';
+import UseEffect from './hook/basic/useEffect';
 
 function App() {
   return (
     <div className="App">
-      <UseState />
+      {/* <UseState /> */}
+      <UseEffect />
     </div>
   );
 }
