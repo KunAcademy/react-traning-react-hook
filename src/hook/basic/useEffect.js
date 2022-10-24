@@ -1,6 +1,11 @@
 import React, { useCallback, useEffect, useState } from "react";
 import "@styles/UseEffect.scss";
 import { Button } from "antd";
+// Lưu ý khi dùng useEffect
+// - Luôn sử dụng dependency để truyền vào hàm useEffect tránh cho việc re-render lại nhiều lần
+// - Tránh sử dụng object là dependency cho hàm useEffect vì với việc so sánh 2 object không phụ thuộc vào giá trị mà phụ
+// thuộc vào địa chỉ ô nhớ của object đó. Khi ta sử dụng state có type là object thì mỗi khi setState thì bản chất
+// giá trị của state có thể giữ nguyên những địa chỉ ô nhớ của state đó đã bị thay đổi việc đó sẽ trigger hàm useEffect.
 
 const UseEffect = () => {
   return (
@@ -53,15 +58,18 @@ const Example1 = () => {
   );
 };
 
-// handle with setTimeout
+// get windows width 
 const Example2 = () => {
-  const [count, setCount] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  const handleResize = () => {
+    setWindowWidth(window.innerWidth);
+  }
 
   useEffect(() => {
-    setTimeout(() => {
-      setCount((prev) => prev + 1);
-    }, 1000);
-  }, []);
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  },[])
 
-  return <div>Render {count} times</div>;
+  return <div>{windowWidth}</div>
 };

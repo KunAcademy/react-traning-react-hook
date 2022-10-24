@@ -1,12 +1,19 @@
 import React, { useState } from "react";
 import { Button, Modal } from "antd";
 import "@styles/UseState.scss";
-
+// Lưu ý khi sử dụng useState
+// - Mỗi lần setState là một lần component re-render.
+// - Trường hợp setState với Object types thì ta nên tạo một bản clone mới của state và 
+// gán giá trị state mới sử dụng setState như ví dụ 3 (pass by reference).
+// - Muốn thay đổi giá trị của state thì bắt buộc phải qua hàm setState, không được thay đổi giá trị
+// trực tiếp của biến state.
+// - Thay vì truyền giá trị mới vào setState, ta có thể truyền vào 1 hàm callback như ví dụ 1. Điều nay giúp giá trị mới
+// phục thuộc vào giá trị cũ chứ không phải giá trị state hiện tại.
 const UseState = () => {
   return (
-    // <Example1 />
+    <Example1 />
     // <Example2 />
-    <Example3 />
+    // <Example3 />
   );
 };
 

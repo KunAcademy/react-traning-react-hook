@@ -1,0 +1,32 @@
+.useRefWrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.buttonWrapper {
+  display: flex;
+  gap: 10px;
+}
+
+.drawlerStyle {
+  width: 20vw;
+  height: 100vh;
+  position: absolute;
+  transition: 1s ease-in-out;
+  border-left: 1px solid black;
+}
+
+.openDrawler {
+  right: 0;
+  top: 0;
+}
+
+.closeDrawler {
+  right: -20vw;
+  top: 0;
+}
