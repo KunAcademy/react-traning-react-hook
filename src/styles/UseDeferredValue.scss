@@ -1,0 +1,16 @@
+.useDeferredValueWrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.listStyle {
+  width: 10vw;
+  height: auto;
+  max-height: 90vh;
+  overflow: auto;
+}
+

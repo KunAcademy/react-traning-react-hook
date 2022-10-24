@@ -5,6 +5,8 @@ import UseContext from './hook/advance/useContext/useContext';
 import UseRef from './hook/advance/useRef';
 import UseMemo from './hook/advance/useMemo';
 import UseCallback from './hook/advance/useCallback/useCallback';
+import UseTransition from './hook/advance/useTransition';
+import UseDeferredValue from './hook/advance/useDeferrredValue';
 
 function App() {
   return (
@@ -14,7 +16,9 @@ function App() {
       {/* <UseContext /> */}
       {/* <UseRef /> */}
       {/* <UseMemo /> */}
-      <UseCallback />
+      {/* <UseCallback /> */}
+      {/* <UseTransition /> */}
+      <UseDeferredValue />
     </div>
   );
 }
